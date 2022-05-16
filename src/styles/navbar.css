@@ -1,0 +1,24 @@
+/* not react component */
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: maroon;
+    color: white;
+
+    
+}
+
+.navbar >ul {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

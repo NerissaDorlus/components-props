@@ -10,7 +10,7 @@ function Footer(){
             style={{width: "100%", backgroundColor: "wheat"}} 
             className="footer">
             <p>
-            Made with 💕 by  Nerissa
+            Made with 💕 by  Nerissa, 2022
             </p>
         </footer>
        

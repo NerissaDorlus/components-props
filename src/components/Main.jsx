@@ -1,13 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import Greet  from "./Greet"
 
-function Main(props){
+const students = [
+    {id: 1, firstName:"Wade", lastName: "Booth"},
+    {id: 2, firstName: 'Alex', lastName: 'Hall'},
+    {id: 3, firstName: 'Maria', lastName: 'Bruno'},
+    {id:  4, firstName: 'Arthur', lastName: 'Silva'},
+    {id: 5,firstName: 'Chole'}
+]
+
+function Main(){
+    const [studentList, setStudentList] =  useState(students);
+    const handleClick = ()  =>  {
+        //add Rodrigo to our list  of students
+        const rodrigo = {id: 6, firstName: "Rodrigo"}
+        setStudentList([...students, rodrigo])
+        // below removes button once Rodrigo is  added
+        document.querySelector('button').style.display = 'none'
+    }
     return(
         <main>
-            <Greet firstName="Nerissa" lastName="Dorlus" age="31"/>
-            <Greet firstName="Darie"/>
-            <Greet firstName="Riessa"/>
-            <Greet firstName="Anouk"/>
+            <button onClick={handleClick}>Add Rodrigo</button>
+            {studentList.map(student  => {
+                return(
+                <Greet 
+                key={student.id} 
+                lastName= {student.lastName}
+                firstName={student.firstName}/>
+                )
+            })}   
         </main>
     )
 }
